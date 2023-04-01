@@ -1,0 +1,29 @@
+button{
+    background-color:rgb(255, 153, 0) ;
+    position: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    width: 10%;
+    padding: 10px;
+  
+}
+.pokemon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.data{
+    margin-top: 20px;
+    background-color: rgb(255, 153, 0);
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+   
+    color: aliceblue;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}

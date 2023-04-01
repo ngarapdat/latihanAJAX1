@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Ajax</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="pokemon">
+        <h3>Get Pikachu</h3>
+        <button id="btn">Get</button>
+        <div id="data" class="data">
+
+        </div>
+    </div>
+</body>
+<script>
+    const btn = document.getElementById("btn");
+    const dataDiv = document.getElementById("data");
+
+    btn.addEventListener("click", () => {
+        fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+            .then(response => response.json())
+            .then(data => {
+                // Menampilkan hasil pada div "data"
+                dataDiv.innerHTML = `
+        <p> ${data.id} : ${data.name}</p>
+       
+        <p><img src="${data.sprites.front_default}" alt="${data.name}"></p>
+        <p>Type: ${data.types[0].type.name}</p>
+      `;
+            })
+            .catch(error => console.error(error));
+    });
+</script>
+
+</html>
